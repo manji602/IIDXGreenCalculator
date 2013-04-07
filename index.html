@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://manji602.com/lib/js/namespace.js"></script>
+    <script type="text/javascript" src="http://manji602.com/lib/js/brook-core.js"></script>
+    <script type="text/javascript" src="http://manji602.com/lib/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <link href="http://manji602.com/css/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      body { padding-top:60px; }
+    </style>
+    <title>IIDX 緑数字計算機</title>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">IIDX 緑数字計算機</a>
+        </div><!--/.container-->
+      </div><!--/.navbar-inner-->
+    </div><!--/.navbar-->
+
+    <div class="container">
+      <form class="form-horizontal">
+	<div class="control-group">
+	  <label class="control-label">BPM[1]</label>
+	  <div class="controls">
+	    <input type="text" id="bpm1" >
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">BPM[2]</label>
+	  <div class="controls">
+	    <input type="text" id="bpm2" >
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">BPM[3]</label>
+	  <div class="controls">
+	    <input type="text" id="bpm3" >
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">緑数字</label>
+	  <div class="controls">
+	    <input type="text" id="greenNumber" placeholder="普段の緑数字を記入して下さい。">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label">白数字</label>
+	  <div class="controls">
+	    <input type="text" id="whiteNumber" placeholder="普段の白数字を記入して下さい。">
+	  </div>
+	</div>
+	<div class="control-group">
+	  <div class="controls">
+	    <button type="submit" class="calc">計算</button>
+	    <button type="submit" class="reset">リセット</button>
+	  </div>
+	</div>
+      </form>
+
+      <div class="HSDisplayStyle" style="width:80%; margin-left:auto;margin-right:auto;">
+	<input type="radio" name="HSFormat" id="ac" value="ac" checked />tricoro AC表記
+	<input type="radio" name="HSFormat" id="cs" value="cs" />CS表記
+      </div>
+
+      <table class="table" style="width:80%; margin-left:auto; margin-right:auto;">
+	<thead>
+	  <tr>
+	    <th>HS</th><th>BPM[1]</th><th>BPM[2]</th><th>BPM[3]</th>
+	  </tr>
+	</thead>
+	<tbody class="HSArray">
+	  <tr><td class="speed">4.0</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">3.75</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">3.5</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">3.25</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">3.0</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">2.75</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">2.5</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">2.25</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">2.0</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">1.5</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	  <tr><td class="speed">1.0</td><td class="whiteNum1">--</td><td class="whiteNum2">--</td><td class="whiteNum3">--</td></tr>
+	</tbody>
+      </table>
+    </div><!-- container -->
+
+    <!-- calculation controller -->
+    <script type="text/javascript">
+      Namespace('com.iidx.green.main').use('com.iidx.green *').apply(function(ns) {
+        var controller = new ns.main();
+      });
+    </script>
+    <!-- google analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38754226-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>	    
+  </body>
+</html>
